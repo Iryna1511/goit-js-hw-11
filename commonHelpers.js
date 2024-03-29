@@ -1,25 +1,25 @@
-import"./assets/vendor-db7463ae.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const s of r.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&i(s)}).observe(document,{childList:!0,subtree:!0});function o(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerPolicy&&(r.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?r.credentials="include":e.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(e){if(e.ep)return;e.ep=!0;const r=o(e);fetch(e.href,r)}})();function c(n){const t=n.trim();if(t==="")return;const o="43101979-d4b3d95f27087e7220544f5cb",i="https://pixabay.com/api/?key=",e={image_type:"photo",orientation:"horizontal",safesearch:!0},r=i+o+"&q="+t;return fetch(r,e).then(s=>{if(!s.ok)throw new Error(s.status);return s.json()})}function l(n){n.map(t=>`<li class="gallery-item">
+import"./assets/vendor-db7463ae.js";(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))i(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&i(n)}).observe(document,{childList:!0,subtree:!0});function o(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function i(e){if(e.ep)return;e.ep=!0;const t=o(e);fetch(e.href,t)}})();function c(s){const r=s.trim();if(r==="")return;const o="43101979-d4b3d95f27087e7220544f5cb",i="https://pixabay.com/api/?key=",e={image_type:"photo",orientation:"horizontal",safesearch:!0},t=i+o+"&q="+r;return fetch(t,e).then(n=>{if(!n.ok)throw new Error(n.status);return n.json()})}const l=document.querySelector(".gallery");function u(s){const r=s.map(o=>`<li class="gallery-item">
   <a
-    href=${t.largeImageURL}
+    href=${o.largeImageURL}
     ><img
-      src=${t.webformatURL}
-      alt=${t.tags}
+      src=${o.webformatURL}
+      alt=${o.tags}
   /></a>
   <ul class="img-dscr">
     <li>
-      <p><b>Likes</b> ${t.likes}</p>
+      <p><b>Likes</b> ${o.likes}</p>
     </li>
     <li>
-      <p><b>Views</b> ${t.views}</p>
+      <p><b>Views</b> ${o.views}</p>
     </li>
     <li>
-      <p><b>Comments</b> ${t.comments}</p>
+      <p><b>Comments</b> ${o.comments}</p>
     </li>
     <li>
-      <p><b>Downloads</b> ${t.downloads}</p>
+      <p><b>Downloads</b> ${o.downloads}</p>
     </li>
   </ul>
 </li>
 
-`).join(" ")}const u=document.querySelector(".form"),a=document.querySelector("input"),f=document.querySelector(".gallery");u.addEventListener("submit",n=>{n.preventDefault();const t=c(a.value).then(o=>{const i=o.hits,e=l(i);f.innerHTML=e}).catch(o=>{console.error("Error fetching images:",o)});console.log(t)});
+`).join(" ");l.insertAdjacentHTML("beforeend",r)}const a=document.querySelector(".form"),f=document.querySelector("input");document.querySelector(".gallery");a.addEventListener("submit",s=>{s.preventDefault(),c(f.value).then(r=>{u(r.hits)}).catch(r=>{console.error("Error fetching images:",r)})});
 //# sourceMappingURL=commonHelpers.js.map
