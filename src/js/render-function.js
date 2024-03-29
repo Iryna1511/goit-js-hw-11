@@ -3,33 +3,25 @@
 export function createMarkUp(images) {
   const markUp = images
     .map(
-      ({
-        largeImageURL,
-        webformatURL,
-        tags,
-        likes,
-        views,
-        comments,
-        downloads,
-      }) => `<li class="gallery-item">
+      image => `<li class="gallery-item">
   <a
-    href=${largeImageURL}
+    href=${image.largeImageURL}
     ><img
-      src=${webformatURL}
-      alt=${tags}
+      src=${image.webformatURL}
+      alt=${image.tags}
   /></a>
   <ul class="img-dscr">
     <li>
-      <p><b>Likes</b> ${likes}</p>
+      <p><b>Likes</b> ${image.likes}</p>
     </li>
     <li>
-      <p><b>Views</b> ${views}</p>
+      <p><b>Views</b> ${image.views}</p>
     </li>
     <li>
-      <p><b>Comments</b> ${comments}</p>
+      <p><b>Comments</b> ${image.comments}</p>
     </li>
     <li>
-      <p><b>Downloads</b> ${downloads}</p>
+      <p><b>Downloads</b> ${image.downloads}</p>
     </li>
   </ul>
 </li>

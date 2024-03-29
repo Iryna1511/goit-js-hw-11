@@ -15,11 +15,15 @@ const galleryEl = document.querySelector('.gallery');
 
 formEl.addEventListener('submit', e => {
   e.preventDefault();
-  const markUp = getImages(inputEl.value);
-  // .then(resolve => {
-  //     createMarkUp(resolve.hits);
-  //   });
-  // .catch(console.error());
+  const markUp = getImages(inputEl.value)
+    .then(response => {
+      const images = response.hits;
+      const markUp = createMarkUp(images);
+      galleryEl.innerHTML = markUp;
+    })
+    .catch(error => {
+      console.error('Error fetching images:', error);
+    });
 
   console.log(markUp);
   //   createMarkUp(hits);
