@@ -1,15 +1,17 @@
-// У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
-export const card = document.querySelector('.gallery');
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+export const galleryEl = document.querySelector(".gallery");
 export function createMarkUp(images) {
   const markUp = images
     .map(
       image => `<li class="gallery-item">
-  <a
-    href=${image.largeImageURL}
+  <a class="gallery-link"
+    href="${image.largeImageURL}"
     ><img
-      src=${image.webformatURL}
-      alt=${image.tags}
-  /></a>
+      src="${image.webformatURL}"
+      alt="${image.tags}"
+  />
   <ul class="img-dscr">
     <li>
       <p><b>Likes</b> ${image.likes}</p>
@@ -24,10 +26,17 @@ export function createMarkUp(images) {
       <p><b>Downloads</b> ${image.downloads}</p>
     </li>
   </ul>
+  </a>
 </li>
 
 `
     )
-    .join(' ');
-  card.insertAdjacentHTML('beforeend', markUp);
+    .join("");
+  galleryEl.insertAdjacentHTML("beforeend", markUp);
+  const lightbox = new SimpleLightbox(".gallery-link", {
+    captionsData: "alt",
+    captionDelay: 250,
+  });
 }
+
+// У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
