@@ -47,17 +47,18 @@ button:hover {
   max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 24px;
 
   margin: 24px auto;
 }
 .gallery-item {
   flex-basis: calc((100% - 72px) / 4);
-  height: 200px;
+  /* height: 200px; */
 }
 
 img {
-  object-fit: contain;
+  object-fit: cover;
   height: 200px;
 }
 
