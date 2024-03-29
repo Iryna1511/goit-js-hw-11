@@ -1,9 +1,11 @@
 // У файлі main.js напиши всю логіку роботи додатка.
 import './js/pixabay-api';
+import { getImages } from './js/pixabay-api';
 import './js/render-function';
+import { createMarkUp } from './js/render-function';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import { getImages } from './js/pixabay-api';
+
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -13,7 +15,14 @@ const galleryEl = document.querySelector('.gallery');
 
 formEl.addEventListener('submit', e => {
   e.preventDefault();
-  console.log(getImages(inputEl.value));
+  const markUp = getImages(inputEl.value);
+  // .then(resolve => {
+  //     createMarkUp(resolve.hits);
+  //   });
+  // .catch(console.error());
+
+  console.log(markUp);
+  //   createMarkUp(hits);
 });
 
 // galleryEl.insertAdjacentHTML('beforeend', createMarkUp);

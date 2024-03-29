@@ -44,7 +44,7 @@ button:hover {
 }
 
 .gallery {
-  max-width: 1200px;
+  max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -54,6 +54,14 @@ button:hover {
 .gallery-item {
   flex-basis: calc((100% - 72px) / 4);
 }
+
+.img-dscr {
+  display: flex;
+}
+.img-dscr li {
+  text-align: center;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;

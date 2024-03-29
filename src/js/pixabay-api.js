@@ -19,21 +19,13 @@ export function getImages(query) {
     safesearch: true,
   };
   const URL = baseURL + API_KEY + '&q=' + queryTrimed;
-  return fetch(URL, options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .catch(error => console.log(error));
+  return fetch(URL, options).then(response => {
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    return response.json();
+  });
 }
-
-// formEl.addEventListener('submit', e => {
-//   e.preventDefault();
-//   const searchFor = inputEl.value; // IN EVENT
-//   console.log(searchFor);
-// });
 
 // const URL =
 //   'https://pixabay.com/api/?key=' +
