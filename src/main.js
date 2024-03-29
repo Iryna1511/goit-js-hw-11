@@ -17,15 +17,12 @@ formEl.addEventListener('submit', e => {
   e.preventDefault();
   const markUp = getImages(inputEl.value)
     .then(response => {
-      const images = response.hits;
-      const markUp = createMarkUp(images);
-      galleryEl.innerHTML = markUp;
+      createMarkUp(response.hits);
     })
     .catch(error => {
       console.error('Error fetching images:', error);
     });
 
-  console.log(markUp);
   //   createMarkUp(hits);
 });
 

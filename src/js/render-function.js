@@ -1,5 +1,5 @@
 // У файлі render-functions.js створи функції для відображення елементів інтерфейсу.
-
+export const card = document.querySelector('.gallery');
 export function createMarkUp(images) {
   const markUp = images
     .map(
@@ -29,4 +29,5 @@ export function createMarkUp(images) {
 `
     )
     .join(' ');
+  card.insertAdjacentHTML('beforeend', markUp);
 }

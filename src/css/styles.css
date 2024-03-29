@@ -53,6 +53,12 @@ button:hover {
 }
 .gallery-item {
   flex-basis: calc((100% - 72px) / 4);
+  height: 200px;
+}
+
+img {
+  object-fit: contain;
+  height: 200px;
 }
 
 .img-dscr {
